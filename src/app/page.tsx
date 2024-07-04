@@ -1,5 +1,6 @@
 "use client";
 
+import HeartRate from "@/components/HeartRate";
 import CyclingSpeedCadence from "@/components/cadence";
 import { FormEvent, FormEventHandler, useState } from "react";
 
@@ -44,6 +45,7 @@ export default function Component() {
               />
             </div>
             <CyclingSpeedCadence />
+            <HeartRate />
           </>
         )}
       </div>

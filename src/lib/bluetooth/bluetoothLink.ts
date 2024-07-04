@@ -144,7 +144,8 @@ export const heartRateLink = async (
     setLoadingState(true);
     // offer the device selection list in the browser
     heartRateDevice = await navigator.bluetooth.requestDevice({
-      filters: [{ services: [serviceUuid] }],
+      acceptAllDevices: true,
+      //  filters: [{ services: [serviceUuid] }],
     });
     // bind and event listener for a disconection
     heartRateDevice.addEventListener("gattserverdisconnected", onDisconnected);

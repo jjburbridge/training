@@ -1,11 +1,11 @@
 import { FC, PropsWithChildren, useEffect, useState } from "react";
 import { Spinner } from "./loading";
-import { cscLink } from "@/lib/bluetooth/bluetoothLink";
+import { heartRateLink } from "@/lib/bluetooth/bluetoothLink";
 
-const CscValue: FC<PropsWithChildren> = ({ children }) => (
+const HeartRateValue: FC<PropsWithChildren> = ({ children }) => (
   <span className="flex items-end text-5xl font-extrabold">
     {children}
-    <span className="relative -top-6-px mr-1 font-bold text-sm">RPM</span>
+    <span className="relative -top-6-px mr-1 font-bold text-sm">BPM</span>
   </span>
 );
 
@@ -25,24 +25,24 @@ const Toggle: FC<{
   </label>
 );
 
-const CyclingSpeedCadence: FC = () => {
-  const [cscData, updateCscData] = useState(null);
+const HeartRate: FC = () => {
+  const [HRData, updateHRData] = useState(null);
   const [loadingState, setLoadingState] = useState(false);
   const [toggleState, updateToggleState] = useState(false);
 
   useEffect(() => {
     if (!toggleState) return setLoadingState(false);
-    cscLink(updateCscData, updateToggleState, setLoadingState);
+    heartRateLink(updateHRData, updateToggleState, setLoadingState);
   }, [toggleState]);
   return (
     <>
       <div className="relative flex font-extrabold text-5xl">
         {loadingState && <Spinner />}
 
-        {cscData && <CscValue>{cscData}</CscValue>}
+        {HRData && <HeartRateValue>{HRData}</HeartRateValue>}
       </div>
       <div className="text-white flex items-center content-center">
-        <h6 className="text-left mb-0 pr-4">Cadence</h6>
+        <h6 className="text-left mb-0 pr-4">Heart Rate</h6>
         <Toggle
           toggleState={toggleState}
           updateToggleState={() => updateToggleState((prev) => !prev)}
@@ -52,4 +52,4 @@ const CyclingSpeedCadence: FC = () => {
   );
 };
 
-export default CyclingSpeedCadence;
+export default HeartRate;
