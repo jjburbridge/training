@@ -18,7 +18,7 @@ export default function Component() {
   };
   return (
     <div className="flex flex-col items-center justify-center h-full bg-gray-100 dark:bg-gray-900">
-      <div className="max-w-7xl w-full space-y-6">
+      <div className="md:max-w-xl max-w-5xl w-full space-y-6">
         <form onSubmit={handleSubmit} className="flex items-center space-x-2">
           <input
             type="text"
