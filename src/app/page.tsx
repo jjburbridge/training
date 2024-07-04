@@ -2,6 +2,7 @@
 
 import HeartRate from "@/components/HeartRate";
 import CyclingSpeedCadence from "@/components/cadence";
+import Power from "@/components/power";
 import { FormEvent, FormEventHandler, useState } from "react";
 
 export default function Component() {
@@ -46,6 +47,7 @@ export default function Component() {
             </div>
             <CyclingSpeedCadence />
             <HeartRate />
+            <Power />
           </>
         )}
       </div>
