@@ -6,8 +6,8 @@ import Power from "@/components/power";
 import { FormEvent, FormEventHandler, useState } from "react";
 
 export default function Component() {
-  const [video, setVideo] = useState("ewrf_rCHUdA");
-  const [loaded, setLoaded] = useState("ewrf_rCHUdA");
+  const [video, setVideo] = useState("-fCSeOHLhz4");
+  const [loaded, setLoaded] = useState("-fCSeOHLhz4");
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
@@ -17,22 +17,27 @@ export default function Component() {
     }
   };
   return (
-    <div className="flex flex-col items-center justify-center h-full bg-gray-100 dark:bg-gray-900">
-      <div className="md:max-w-xl max-w-5xl w-full space-y-6">
-        <form onSubmit={handleSubmit} className="flex items-center space-x-2">
-          <input
-            type="text"
-            placeholder="Search for a YouTube video"
-            value={video}
-            onChange={(e) => setVideo(e.target.value)}
-            className="flex-1 bg-white dark:bg-gray-800 dark:text-white"
-          />
-          <button
-            type="submit"
-            className="bg-primary text-primary-foreground hover:bg-primary/90"
-          >
-            Search
-          </button>
+    <div className="flex items-center justify-center min-h-screen h-full bg-gray-100 dark:bg-gray-900">
+      <div className="md:max-w-xl max-w-5xl w-full">
+        <form onSubmit={handleSubmit} className="flex flex-col flex-wrap">
+          <div className="flex-col items-start">
+            <label className="text-white text-left flex-none">Enter a youtube Video id</label>
+            <input
+              type="text"
+              placeholder="YouTube video id"
+              value={video}
+              onChange={(e) => setVideo(e.target.value)}
+              className="flex-1 w-full bg-white dark:bg-gray-800 dark:text-white"
+            />
+          </div>
+          <div className="flex-col items-end">
+            <button
+              type="submit"
+              className="w-full bg-primary text-primary-foreground hover:bg-primary/90 dark:text-primary dark:bg-primary-foreground dark:hover:bg-primary-foreground/90 "
+            >
+              Load video
+            </button>
+          </div>
         </form>
         {loaded && (
           <>
@@ -45,9 +50,11 @@ export default function Component() {
                 className="w-full h-full"
               />
             </div>
-            <CyclingSpeedCadence />
-            <HeartRate />
-            <Power />
+            <div className="w-full flex m-auto flex-row flex-wrap">
+              <CyclingSpeedCadence />
+              <HeartRate />
+              <Power />
+            </div>
           </>
         )}
       </div>

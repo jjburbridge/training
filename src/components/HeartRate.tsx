@@ -3,7 +3,7 @@ import { Spinner } from "./loading";
 import { heartRateLink } from "@/lib/bluetooth/bluetoothLink";
 
 const HeartRateValue: FC<PropsWithChildren> = ({ children }) => (
-  <span className="flex items-end text-5xl font-extrabold">
+  <span className="flex items-end min-w-10 text-5xl text-white font-extrabold">
     {children}
     <span className="relative -top-6-px mr-1 font-bold text-sm">BPM</span>
   </span>
@@ -36,7 +36,7 @@ const HeartRate: FC = () => {
   }, [toggleState]);
   return (
     <>
-      <div className="relative flex font-extrabold text-5xl">
+      <div className="relative min-w-10 h-10 flex font-extrabold text-5xl">
         {loadingState && <Spinner />}
 
         {HRData && <HeartRateValue>{HRData}</HeartRateValue>}

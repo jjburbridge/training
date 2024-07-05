@@ -3,7 +3,7 @@ import { Spinner } from "./loading";
 import { cyclingPowerLink, heartRateLink } from "@/lib/bluetooth/bluetoothLink";
 
 const PowerValue: FC<PropsWithChildren> = ({ children }) => (
-  <span className="flex items-end text-5xl font-extrabold">
+  <span className="flex items-end min-w-10 text-5xl text-white font-extrabold">
     {children}
     <span className="relative -top-6-px mr-1 font-bold text-sm">Watts</span>
   </span>
@@ -53,7 +53,7 @@ const Power: FC = () => {
   }, [toggleState]);
   return (
     <>
-      <div className="relative flex font-extrabold text-5xl">
+      <div className="relative min-w-10 h-10 flex font-extrabold text-5xl">
         {loadingState && <Spinner />}
 
         {powerValue && <PowerValue>{powerValue}</PowerValue>}
