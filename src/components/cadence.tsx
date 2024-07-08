@@ -35,8 +35,8 @@ const CyclingSpeedCadence: FC = () => {
     cscLink(updateCscData, updateToggleState, setLoadingState);
   }, [toggleState]);
   return (
-    <>
-      <div className="relative min-w-10 h-10 flex font-extrabold text-5xl">
+    <div className="py-5 flex-col">
+      <div className=" relative min-w-10 h-10 flex font-extrabold text-5xl">
         {loadingState && <Spinner />}
 
         {cscData && <CscValue>{cscData}</CscValue>}
@@ -48,7 +48,7 @@ const CyclingSpeedCadence: FC = () => {
           updateToggleState={() => updateToggleState((prev) => !prev)}
         />
       </div>
-    </>
+    </div>
   );
 };
 

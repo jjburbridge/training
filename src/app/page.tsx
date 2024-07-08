@@ -19,8 +19,8 @@ export default function Component() {
   return (
     <div className="flex items-center justify-center min-h-screen h-full bg-gray-100 dark:bg-gray-900">
       <div className="md:max-w-xl max-w-5xl w-full">
-        <form onSubmit={handleSubmit} className="flex flex-col flex-wrap">
-          <div className="flex-col items-start">
+        <form onSubmit={handleSubmit} className="flex flex-col flex-wrap ">
+          <div className="flex-col items-start py-5">
             <label className="text-white text-left flex-none">Enter a youtube Video id</label>
             <input
               type="text"
@@ -33,7 +33,7 @@ export default function Component() {
           <div className="flex-col items-end">
             <button
               type="submit"
-              className="w-full bg-primary text-primary-foreground hover:bg-primary/90 dark:text-primary dark:bg-primary-foreground dark:hover:bg-primary-foreground/90 "
+              className="w-full bg-primary rounded text-primary-foreground hover:bg-primary/90 dark:text-primary dark:bg-primary-foreground dark:hover:bg-primary-foreground/90 "
             >
               Load video
             </button>
@@ -41,7 +41,7 @@ export default function Component() {
         </form>
         {loaded && (
           <>
-            <div className="w-full aspect-video rounded-lg overflow-hidden">
+            <div className="w-full py-5 aspect-video rounded-lg overflow-hidden">
               <iframe
                 src={`https://www.youtube.com/embed/${loaded}`}
                 frameBorder="0"
@@ -50,7 +50,7 @@ export default function Component() {
                 className="w-full h-full"
               />
             </div>
-            <div className="w-full flex m-auto flex-row flex-wrap">
+            <div className="w-full flex m-auto py-5 flex-row flex-wrap">
               <CyclingSpeedCadence />
               <HeartRate />
               <Power />

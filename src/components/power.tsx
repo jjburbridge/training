@@ -52,7 +52,7 @@ const Power: FC = () => {
     );
   }, [toggleState]);
   return (
-    <>
+    <div className="py-5">
       <div className="relative min-w-10 h-10 flex font-extrabold text-5xl">
         {loadingState && <Spinner />}
 
@@ -65,7 +65,7 @@ const Power: FC = () => {
           updateToggleState={() => updateToggleState((prev) => !prev)}
         />
       </div>
-    </>
+    </div>
   );
 };
 

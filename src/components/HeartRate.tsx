@@ -35,7 +35,7 @@ const HeartRate: FC = () => {
     heartRateLink(updateHRData, updateToggleState, setLoadingState);
   }, [toggleState]);
   return (
-    <>
+    <div className="py-5 mx-auto flex-col">
       <div className="relative min-w-10 h-10 flex font-extrabold text-5xl">
         {loadingState && <Spinner />}
 
@@ -48,7 +48,7 @@ const HeartRate: FC = () => {
           updateToggleState={() => updateToggleState((prev) => !prev)}
         />
       </div>
-    </>
+    </div>
   );
 };
 
